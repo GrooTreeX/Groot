@@ -1,11 +1,11 @@
 # Groot
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>Happy Rakhi, Sis!</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <style>
     body {
       margin: 0;
@@ -119,8 +119,8 @@
 </head>
 <body>
 
-  <h1>Happy Raksha Bandhan 💖</h1>
-  <button class="tap-btn" onclick="showHeart()">Tap Me</button>
+  <h1> Happy Raksha Bandhan 💖 </h1>
+  <button class="tap-btn" onclick="showHeart()"> Tap Me </button>
 
   <div class="heart-container" id="heartBox">
     <div class="heart"></div>
