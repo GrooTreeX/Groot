@@ -2,111 +2,95 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title> Happy Rakhi, Sis! </title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rakhi Card</title>
   <style>
     body {
-      margin: 50;
-      font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(120deg, #ffdde1, #ee9ca7);
+      background-color: darkgreen;
       display: flex;
-      flex-direction: column;
-      align-items: center;
       justify-content: center;
+      align-items: center;
       height: 100vh;
-      overflow: hidden;
+      flex-direction: column;
+      font-family: 'Segoe UI', sans-serif;
     }
 
-    h1 {
-      font-size: 2em;
-      color: #fff;
-      margin-bottom: 20px;
-      text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
-    }
-
-    .tap-btn {
-      background: #ff4081;
-      color: white;
-      border: none;
+    .btn {
       padding: 15px 30px;
-      font-size: 1.2em;
-      border-radius: 30px;
+      font-size: 18px;
+      background-color: #fff;
+      color: darkgreen;
+      border: none;
+      border-radius: 8px;
       cursor: pointer;
+      font-weight: bold;
       transition: 0.3s;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
     }
 
-    .tap-btn:hover {
-      background: #e91e63;
+    .btn:hover {
+      background-color: #e0e0e0;
     }
 
     .heart-container {
-      margin-top: 40px;
-      position: relative;
-      width: 200px;
-      height: 180px;
+      margin-top: 30px;
       display: none;
-      animation: pop 0.6s ease forwards;
+      flex-direction: column;
+      align-items: center;
+      animation: popUp 0.6s ease forwards;
     }
 
     .heart {
-      position: absolute;
       width: 100px;
       height: 90px;
-      background: red;
-      left: 50%;
-      top: 0;
-      transform: translateX(-50%) rotate(-45deg);
-      border-radius: 50% 50% 0 0;
+      position: relative;
+      background-color: deeppink;
+      transform: scale(0);
+      animation: heartBeat 0.8s ease forwards;
     }
 
     .heart::before,
     .heart::after {
-      content: '';
-      position: absolute;
+      content: "";
       width: 100px;
       height: 90px;
-      background: red;
+      background-color: deeppink;
       border-radius: 50%;
+      position: absolute;
     }
 
     .heart::before {
-      top: -45px;
+      top: -50px;
       left: 0;
     }
 
     .heart::after {
+      left: 50px;
       top: 0;
-      left: 45px;
     }
 
     .message {
-      position: absolute;
-      width: 100%;
-      text-align: center;
-      top: 120px;
-      font-size: 1.4em;
-      font-weight: bold;
-      color: #fff;
+      margin-top: 15px;
+      font-size: 24px;
+      color: white;
       opacity: 0;
-      animation: fadeInUp 2s ease-in-out forwards;
+      animation: fadeIn 1s ease forwards 0.8s;
     }
 
-    @keyframes pop {
-      0% {
-        transform: scale(0.5);
-        opacity: 0;
-      }
-      100% {
+    @keyframes heartBeat {
+      to {
         transform: scale(1);
+      }
+    }
+
+    @keyframes fadeIn {
+      to {
         opacity: 1;
       }
     }
 
-    @keyframes fadeInUp {
+    @keyframes popUp {
       0% {
         opacity: 0;
-        transform: translateY(20px);
+        transform: translateY(50px);
       }
       100% {
         opacity: 1;
@@ -117,18 +101,16 @@
 </head>
 <body>
 
-  <h1>Happy Raksha Bandhan 💖</h1>
-  <button class="tap-btn" onclick="showHeart()">Tap Me</button>
+  <button class="btn" onclick="showHeart()">Tap</button>
 
-  <div class="heart-container" id="heartBox">
+  <div class="heart-container" id="heartContainer">
     <div class="heart"></div>
-    <div class="message">You are my best sister! 💕</div>
+    <div class="message">You are my best sister</div>
   </div>
 
   <script>
     function showHeart() {
-      const heart = document.getElementById('heartBox');
-      heart.style.display = 'block';
+      document.getElementById("heartContainer").style.display = "flex";
     }
   </script>
 
